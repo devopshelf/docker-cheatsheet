@@ -49,13 +49,13 @@ Docker cheat-sheet contains all the basic and advance Docker commands. I will up
 `docker build .` //build dockerfile
 
 ### Dockerfile Commands
-*FROM
-*WORKDIR
-*COPY
-*ENV
-*RUN
-*EXPOSE
-*CMD
+* FROM
+* WORKDIR
+* COPY
+* ENV
+* RUN
+* EXPOSE
+* CMD
 
 ### Building with noCache
 `docker build --no-cache .`
@@ -81,7 +81,7 @@ EXPOSE 8080
 CMD ["npm","start"]
 ```
 
-#Some Basic Docker Compose Commands
+# Some Basic Docker Compose Commands
 ### Start Application
 `docker-compose up`
 
@@ -103,14 +103,14 @@ CMD ["npm","start"]
 ### Volumes Basics
 ```
 docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app <name>
+//I am adding two volumes because I want my container to reference node_modules folder of container and not host.
 
-docker-compose volumes
-
+//In docker-compose.yml file
 volumes:
   - /app/node_modules
   - .:/app
 ```
-#### I am adding two volumes because I want my container to reference node_modules folder of container and not host.
+
 	
 
 
