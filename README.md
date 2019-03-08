@@ -1,10 +1,10 @@
 # docker-cheatsheet
 Docker cheat-sheet contains all the basic and advance Docker commands. I will update this repo time to time with latest commands and updates. 
 
-###Docker Version Check
+### Docker Version Check
 `docker version`
 
-###SSH into default machine(Only for windows)
+### SSH into default machine(Only for windows)
 `docker-machine ssh default`
 
 
@@ -12,29 +12,29 @@ Docker cheat-sheet contains all the basic and advance Docker commands. I will up
 
 `docker create hello-world`
 
-###Shorthand for Run and Create command
+### Shorthand for Run and Create command
 `docker start -a hello-world`
 
-###Check Logs
+### Check Logs
 `docker logs <container id>`
 
 `docker run busybox echo hi there`
 
-###Checking all running containers
+### Checking all running containers
 `docker ps`
 
-###Checking all containers(Including Stopped one's)
+### Checking all containers(Including Stopped one's)
 `docker ps -a` 
 
-###Delete All
+### Delete All
 `docker system prune`
 
-###Stop Container
+### Stop Container
 `docker stop <container id>` //takes sometime to stop
 
 `docker kill <container id>`
 
-###Executing Commands inside container
+### Executing Commands inside container
 `docker exec -it <container_id> <command>`
 
 //for example
@@ -45,10 +45,10 @@ Docker cheat-sheet contains all the basic and advance Docker commands. I will up
 
 `docker exec -it redis sh` //will open shell or /bin/bash 
 
-###Building Docker file
+### Building Docker file
 `docker build .` //build dockerfile
 
-###Dockerfile Commands
+### Dockerfile Commands
 *FROM
 *WORKDIR
 *COPY
@@ -57,13 +57,13 @@ Docker cheat-sheet contains all the basic and advance Docker commands. I will up
 *EXPOSE
 *CMD
 
-###Building with noCache
+### Building with noCache
 `docker build --no-cache .`
 
-###Building with Tag
+### Building with Tag
 `docker build -t <dockerid>/<name>:<version> .`
 
-###Dockerfile for nodejs
+### Dockerfile for nodejs
 
 ```
 FROM node:8
@@ -82,25 +82,25 @@ CMD ["npm","start"]
 ```
 
 #Some Basic Docker Compose Commands
-###Start Application
+### Start Application
 `docker-compose up`
 
-###Build App before Starting 
+### Build App before Starting 
 `docker-compose up --build`
 
-###Running in detached Mode
+### Running in detached Mode
 `docker-compose up -d`
 
-###Stopping Application
+### Stopping Application
 `docker-compose down`
 
-###Listing Running Containers
+### Listing Running Containers
 `docker-compose ps`
 
-###If Dockerfile name is changed
+### If Dockerfile name is changed
 `docker build -f Dockerfile.dev .`
 
-###Volumes Basics
+### Volumes Basics
 ```
 docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app <name>
 
@@ -110,7 +110,7 @@ volumes:
   - /app/node_modules
   - .:/app
 ```
-####I am adding two volumes because I want my container to reference node_modules folder of container and not host.
+#### I am adding two volumes because I want my container to reference node_modules folder of container and not host.
 	
 
 
