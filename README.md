@@ -101,7 +101,7 @@ CMD ["npm","start"]
 `docker build -f Dockerfile.dev .`
 
 ### Volumes Basics
-```
+```javascript
 docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app <name>
 //I am adding two volumes because I want my container to reference node_modules folder of container and not host.
 
